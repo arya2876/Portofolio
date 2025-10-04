@@ -15,24 +15,41 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3gzNmRmMXdsa2ZrZHZpb2M3M3NnYjh0MjFsbXRhdjE3YzExa2VqaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduQ7fIvpVTLo0lW/giphy.gif') center/cover fixed;
             min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: -1;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.92);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             margin-top: 20px;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         header {
             padding: 30px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGJkbDRiMzFwbmlvNmQ3Z203ZXFvMGkxYmRjYmpqN2J0ZGJ1ZmtlZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnxpQ3ghPiB2Hp6/giphy.gif') center/cover;
             color: white;
             border-radius: 15px;
             margin-bottom: 30px;
@@ -41,6 +58,23 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .header-content, .header-image {
+            position: relative;
+            z-index: 2;
         }
 
         .header-content {
@@ -57,7 +91,7 @@
         .gif-background {
             width: 180px;
             height: 180px;
-            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGF3eGZhdnJrdjE5ZWZqMnQ3b2wwcTJzejl3MXJyeGV1Z2FmZnRkdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif') center/cover;
+            background: url('Motion Background GIF by Trakto.gif') center/cover;
             border-radius: 50%;
             display: flex;
             align-items: center;
