@@ -15,7 +15,7 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3gzNmRmMXdsa2ZrZHZpb2M3M3NnYjh0MjFsbXRhdjE3YzExa2VqaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduQ7fIvpVTLo0lW/giphy.gif') center/cover fixed;
+            background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGl4bG53ZmZkcmcwcHoyamcydjluNjFtbThiM3FzM2RvbTMzcmJpZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IbekjrW43xz0XNtpe0/giphy.gif') center/cover fixed;
             min-height: 100vh;
             position: relative;
         }
@@ -47,9 +47,9 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        header {
+        header { 
             padding: 30px;
-            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGJkbDRiMzFwbmlvNmQ3Z203ZXFvMGkxYmRjYmpqN2J0ZGJ1ZmtlZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnxpQ3ghPiB2Hp6/giphy.gif') center/cover;
+            background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVsenB1eG82dGY5dnR2NXczenQ1dHBocWZoaWF0ZWliNmUzcWs4MSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ec5iuhc2aM9o3uK64q/giphy.gif') center/cover;
             color: white;
             border-radius: 15px;
             margin-bottom: 30px;
@@ -91,7 +91,7 @@
         .gif-background {
             width: 180px;
             height: 180px;
-            background: url('Motion Background GIF by Trakto.gif') center/cover;
+            background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGl4bG53ZmZkcmcwcHoyamcydjluNjFtbThiM3FzM2RvbTMzcmJpZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IbekjrW43xz0XNtpe0/giphy.gif') center/cover;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -352,7 +352,7 @@
     <div class="container">
         <header>
             <div class="header-content">
-                <h1>Halo, Nama Saya <span class="animated-name" id="changingName">Arya Winata</span></h1>
+                <h1>Hello, I'AM <span class="animated-name" id="changingName">Arya Winata</span></h1>
             </div>
             <div class="header-image">
                 <div class="gif-background">
@@ -414,15 +414,12 @@
                 <video controls width="600" height="300">
                     <source src="Wallpaper F1 4K TEST EDIT AMD.mp4" type="video/mp4">
                     <source src="video-profil.webm" type="video/webm">
-                    Browser Anda tidak mendukung tag video HTML5.
                 </video>
-                <p>Video perkenalan singkat tentang saya</p>
             </div>
         </section>
 
         <section>
             <h2>Form Kontak</h2>
-            <form action="mailto:you@example.com" method="post" enctype="text/plain">
                 <p>
                     <label for="nama">Nama</label><br>
                     <input type="text" id="nama" name="Nama" required>
@@ -439,32 +436,23 @@
                     <label for="pesan">Pesan</label><br>
                     <textarea id="pesan" name="Pesan" rows="6" required></textarea>
                 </p>
-                <p>
-                    <label for="video">Upload Video (Opsional)</label><br>
-                    <input type="file" id="video" name="Video" accept="video/*">
-                </p>
-                <p>
-                    <input type="submit" value="Kirim">
-                </p>
             </form>
-            <p>Catatan: Form ini menggunakan mailto sehingga akan membuka aplikasi email di perangkat Anda.</p>
         </section>
     </main>
 
         <footer>
-            <p>© 2025 Nama Anda — <a href="#pendidikan">Ke Riwayat Pendidikan</a></p>
+            <p>© 2025 Arya Winata — <a href="#pendidikan">Ke Riwayat Pendidikan</a></p>
         </footer>
     </div>
 
     <script>
-        // Array nama-nama yang akan bergantian muncul
+        // nama-nama yang akan bergantian 
         const names = [
             "Arya Winata",
             "Developer",
             "Student",
             "Programmer",
             "Web Designer",
-            "Tech Enthusiast"
         ];
         
         let currentIndex = 0;
@@ -477,7 +465,7 @@
             nameElement.className = 'animated-name typewriter-effect';
             
             let i = 0;
-            const typingSpeed = 100; // Kecepatan mengetik (ms per karakter)
+            const typingSpeed = 120; // Kecepatan mengetik (ms per karakter)
             
             function type() {
                 if (i < text.length) {
@@ -498,7 +486,7 @@
         function deleteText(callback) {
             const currentText = nameElement.textContent;
             let i = currentText.length;
-            const deleteSpeed = 50; // Kecepatan menghapus (ms per karakter)
+            const deleteSpeed = 100; // Kecepatan menghapus (ms per karakter)
             
             function deleteChar() {
                 if (i > 0) {
