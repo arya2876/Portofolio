@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya Winata - Portfolio Landing Page</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="bootstrap-custom.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-code-slash me-2"></i>Arya Winata
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero/Jumbotron Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8 mx-auto text-center text-white">
+                    <h1 class="display-2 fw-bold mb-4">
+                        Hello, I'm <span class="text-warning" id="changingName">Arya Winata</span>
+                    </h1>
+                    <p class="lead mb-5 fs-4">
+                        Full Stack Developer | Student | Web Designer
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="#portfolio" class="btn btn-warning btn-lg px-4 py-3">
+                            <i class="bi bi-eye me-2"></i>View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3">
+                            <i class="bi bi-envelope me-2"></i>Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary mb-3">About Me</h2>
+                    <p class="lead">Passionate developer with a love for creating innovative solutions</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body p-4">
+                            <div class="bg-primary bg-gradient text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 icon-md">
+                                <i class="bi bi-mortarboard fs-4"></i>
+                            </div>
+                            <h4 class="fw-bold">Education</h4>
+                            <p class="card-text">Currently studying Information Systems at Universitas Dian Nuswantoro. Graduated from SMA Negeri 1 Tahunan with focus on Science.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body p-4">
+                            <div class="bg-success bg-gradient text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 icon-md">
+                                <i class="bi bi-gear fs-4"></i>
+                            </div>
+                            <h4 class="fw-bold">Skills</h4>
+                            <p class="card-text">Proficient in HTML, CSS, JavaScript, and modern web development frameworks. Always learning new technologies and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary mb-3">My Services</h2>
+                    <p class="lead">What I can do for you</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-primary bg-gradient text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 icon-lg">
+                                <i class="bi bi-code-slash fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Web Development</h4>
+                            <p class="card-text">Creating responsive and modern websites using latest technologies and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-success bg-gradient text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 icon-lg">
+                                <i class="bi bi-palette fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">UI/UX Design</h4>
+                            <p class="card-text">Designing beautiful and user-friendly interfaces that provide great user experience.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-warning bg-gradient text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 icon-lg">
+                                <i class="bi bi-phone fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Mobile Responsive</h4>
+                            <p class="card-text">Ensuring your website works perfectly on all devices and screen sizes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary mb-3">Portfolio</h2>
+                    <p class="lead">Check out some of my recent work</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow portfolio-card">
+                        <img src="https://via.placeholder.com/400x250/4a90e2/ffffff?text=Project+1" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Student Registration System</h5>
+                            <p class="card-text">A responsive web application for student registration with form validation and data management.</p>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">HTML</span>
+                                <span class="badge bg-success">CSS</span>
+                                <span class="badge bg-warning">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-eye me-1"></i>View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow portfolio-card">
+                        <img src="https://via.placeholder.com/400x250/357abd/ffffff?text=Project+2" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Personal Portfolio</h5>
+                            <p class="card-text">Modern and responsive portfolio website showcasing skills, projects, and contact information.</p>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Bootstrap</span>
+                                <span class="badge bg-success">CSS3</span>
+                                <span class="badge bg-info">Responsive</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="index.html" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-eye me-1"></i>View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow portfolio-card">
+                        <img src="https://via.placeholder.com/400x250/ff6b6b/ffffff?text=Project+3" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Coming Soon</h5>
+                            <p class="card-text">Exciting new project in development. Stay tuned for updates and announcements.</p>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-secondary">In Progress</span>
+                                <span class="badge bg-info">React</span>
+                                <span class="badge bg-warning">Node.js</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="#" class="btn btn-outline-secondary btn-sm disabled">
+                                <i class="bi bi-clock me-1"></i>Coming Soon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary mb-3">Get In Touch</h2>
+                    <p class="lead">Let's work together on your next project</p>
+                </div>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="card shadow border-0">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-4">Contact Information</h4>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center me-3 icon-sm">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Email</h6>
+                                    <p class="mb-0 text-muted">arya.winata@email.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-success bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center me-3 icon-sm">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Phone</h6>
+                                    <p class="mb-0 text-muted">+62 XXX-XXXX-XXXX</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="bg-warning bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center me-3 icon-sm">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Location</h6>
+                                    <p class="mb-0 text-muted">Semarang, Indonesia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-3">
+                                <a href="https://github.com/arya2876" class="btn btn-outline-primary btn-sm" title="GitHub Profile">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-info btn-sm" title="LinkedIn Profile">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-success btn-sm" title="WhatsApp Contact">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card shadow border-0">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-4">Send Message</h4>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="bi bi-send me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-code-slash me-2"></i>Arya Winata
+                    </h5>
+                    <p class="mb-3">Full Stack Developer passionate about creating innovative web solutions and learning new technologies.</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://github.com/arya2876" class="btn btn-outline-light btn-sm" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm" title="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm" title="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm" title="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="#about" class="text-white-50 text-decoration-none">About</a></li>
+                        <li><a href="#services" class="text-white-50 text-decoration-none">Services</a></li>
+                        <li><a href="#portfolio" class="text-white-50 text-decoration-none">Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Services</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Web Development</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">UI/UX Design</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Mobile Responsive</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <p class="mb-2 text-white-50">
+                        <i class="bi bi-envelope me-2"></i>arya.winata@email.com
+                    </p>
+                    <p class="mb-2 text-white-50">
+                        <i class="bi bi-phone me-2"></i>+62 XXX-XXXX-XXXX
+                    </p>
+                    <p class="mb-0 text-white-50">
+                        <i class="bi bi-geo-alt me-2"></i>Semarang, Indonesia
+                    </p>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-white-50">&copy; 2025 Arya Winata. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-white-50">Made with <i class="bi bi-heart-fill text-danger"></i> in Indonesia</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Typewriter effect for changing names
+        const names = [
+            "Arya Winata",
+            "Developer",
+            "Student", 
+            "Programmer",
+            "Web Designer",
+            "Entrepreneur"
+        ];
+        
+        let currentIndex = 0;
+        const nameElement = document.getElementById('changingName');
+        let isTyping = false;
+        
+        function typeWriter(text, callback) {
+            isTyping = true;
+            nameElement.textContent = '';
+            
+            let i = 0;
+            const typingSpeed = 120;
+            
+            function type() {
+                if (i < text.length) {
+                    nameElement.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    isTyping = false;
+                    if (callback) callback();
+                }
+            }
+            
+            type();
+        }
+        
+        function deleteText(callback) {
+            const currentText = nameElement.textContent;
+            let i = currentText.length;
+            const deleteSpeed = 100;
+            
+            function deleteChar() {
+                if (i > 0) {
+                    nameElement.textContent = currentText.substring(0, i - 1);
+                    i--;
+                    setTimeout(deleteChar, deleteSpeed);
+                } else {
+                    if (callback) callback();
+                }
+            }
+            
+            deleteChar();
+        }
+        
+        function changeName() {
+            if (isTyping) return;
+            
+            deleteText(() => {
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % names.length;
+                    typeWriter(names[currentIndex]);
+                }, 300);
+            });
+        }
+        
+        // Initialize typewriter effect
+        typeWriter(names[currentIndex]);
+        setInterval(changeName, 4000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Portfolio card hover effects
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
