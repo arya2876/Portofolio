@@ -105,7 +105,13 @@ Modern responsive landing page built with Bootstrap 5 and custom CSS, featuring 
 - Enhances user experience with Bootstrap utilities
 
 ## 🌐 Live Demo
-Access the landing page at: `https://arya2876.github.io/Portofolio/landing.html`
+- **Landing Page (Bootstrap):** `https://arya2876.github.io/Portofolio/landing.html`
+- **Original Portfolio:** `https://arya2876.github.io/Portofolio/index.html`
+
+> **Note:** If changes don't appear immediately, please:
+> 1. Wait 5-10 minutes for GitHub Pages to rebuild
+> 2. Clear browser cache with `Ctrl + Shift + R` (hard refresh)
+> 3. Try incognito/private browsing mode
 
 ## 🛠️ Usage
 
