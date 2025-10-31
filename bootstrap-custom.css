@@ -62,6 +62,7 @@ body {
 .hero-image-container {
     position: relative;
     z-index: 3;
+    padding: 20px;
 }
 
 .hero-profile-wrapper {
@@ -87,6 +88,8 @@ body {
     transition: all 0.4s ease;
     position: relative;
     z-index: 2;
+    display: block;
+    margin: 0 auto;
 }
 
 .hero-image-glow {
@@ -105,6 +108,20 @@ body {
 @keyframes rotate-glow {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Hero Content Adjustments */
+.hero-section .col-xl-7,
+.hero-section .col-lg-7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Button responsive adjustments */
+.hero-section .btn {
+    white-space: nowrap;
+    min-width: 160px;
 }
 
 /* Navbar Enhancement */
@@ -262,15 +279,59 @@ footer a:hover {
     padding: 0.5em 0.75em;
 }
 
-/* Responsive Enhancements */
-@media (max-width: 768px) {
+/* Desktop Large (1200px and up) */
+@media (min-width: 1200px) {
+    .hero-profile-img {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .hero-section .display-2 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktop Medium (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hero-profile-img {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .hero-section .display-2 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Tablet Landscape (992px - 1199px) - iPad Pro */
+@media (min-width: 992px) and (max-width: 1199px) {
     .hero-section {
-        text-align: center;
-        padding: 100px 0;
+        padding: 80px 0;
+    }
+    
+    .hero-profile-img {
+        width: 300px;
+        height: 300px;
     }
     
     .hero-section .display-2 {
         font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.3rem;
+    }
+}
+
+/* Tablet Portrait (768px - 991px) - iPad */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-section {
+        padding: 70px 0;
     }
     
     .hero-profile-img {
@@ -278,13 +339,72 @@ footer a:hover {
         height: 280px;
     }
     
+    .hero-section .display-2 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-section .col-lg-5 {
+        margin-bottom: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 0.875rem 2rem;
+        font-size: 1.05rem;
+    }
+    
+    .d-flex.gap-3 {
+        gap: 1rem;
+    }
+}
+
+/* Mobile Large (576px - 767px) */
+@media (max-width: 767px) {
+    .hero-section {
+        text-align: center;
+        padding: 80px 0;
+    }
+    
+    .hero-section .display-2 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-profile-img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 2rem;
+    }
+    
     .hero-section .row {
-        flex-direction: column-reverse;
+        flex-direction: column;
+    }
+    
+    .hero-section .col-lg-5 {
+        order: 1;
+        margin-bottom: 2rem;
     }
     
     .hero-section .col-lg-7 {
+        order: 2;
         text-align: center;
-        margin-bottom: 2rem;
+    }
+    
+    .d-flex.gap-3 {
+        justify-content: center;
+        gap: 1rem;
     }
     
     section {
@@ -296,13 +416,82 @@ footer a:hover {
     }
 }
 
-@media (max-width: 576px) {
+/* Mobile Small (max 575px) */
+@media (max-width: 575px) {
+    .hero-section {
+        padding: 50px 0;
+    }
+    
     .hero-section .display-2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
     }
     
     .hero-section .lead {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-profile-img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-image-glow {
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .d-flex.gap-3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .d-flex.gap-3 .btn {
+        width: 100%;
+        max-width: 260px;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Mobile Landscape (576px - 767px landscape) */
+@media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+    .hero-section {
+        padding: 40px 0;
+        min-height: 100vh;
+    }
+    
+    .hero-section .row {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .hero-section .col-xl-5 {
+        order: 1;
+        margin-bottom: 0;
+    }
+    
+    .hero-section .col-xl-7 {
+        order: 2;
+        text-align: left;
     }
     
     .hero-profile-img {
@@ -310,23 +499,20 @@ footer a:hover {
         height: 220px;
     }
     
-    .btn-lg {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
+    .hero-section .display-2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
     }
     
     .d-flex.gap-3 {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .d-flex.gap-3 .btn {
-        width: 100%;
-        max-width: 280px;
-    }
-    
-    section {
-        padding: 40px 0;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: flex-start;
     }
 }
 
