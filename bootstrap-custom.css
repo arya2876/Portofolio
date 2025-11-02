@@ -9,15 +9,45 @@
     --success-color: #4ecdc4;
     --warning-color: #ffd93d;
     --danger-color: #ff6b6b;
+    
+    /* 🔮 Glassmorphism & Modern Effects */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --glass-blur: blur(12px);
+    --neon-glow: 0 0 20px rgba(74, 144, 226, 0.4);
+    
+    /* 🌈 Advanced Gradients */
+    --gradient-mesh: linear-gradient(135deg, 
+        rgba(74, 144, 226, 0.1) 0%, 
+        rgba(102, 126, 234, 0.1) 25%, 
+        rgba(118, 75, 162, 0.1) 50%, 
+        rgba(74, 144, 226, 0.1) 75%, 
+        rgba(102, 126, 234, 0.1) 100%);
+    
+    /* 📱 Responsive Typography */
+    --fluid-xs: clamp(0.75rem, 2vw, 0.875rem);
+    --fluid-sm: clamp(0.875rem, 2.5vw, 1rem);
+    --fluid-base: clamp(1rem, 3vw, 1.125rem);
+    --fluid-lg: clamp(1.125rem, 4vw, 1.25rem);
+    --fluid-xl: clamp(1.25rem, 5vw, 1.5rem);
+    --fluid-2xl: clamp(1.5rem, 6vw, 2rem);
+    --fluid-3xl: clamp(2rem, 8vw, 3rem);
+    --fluid-4xl: clamp(2.5rem, 10vw, 4rem);
     --dark-color: #333;
     --light-color: #f8f9fa;
 }
 
 /* Global Styles - Bootstrap Compatible */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
 body {
     font-family: var(--bs-body-font-family, 'Arial', sans-serif);
     line-height: var(--bs-body-line-height, 1.6);
-    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Bootstrap Custom Icon Utilities */
@@ -1211,8 +1241,8 @@ section {
 }
 
 .form-control:focus {
-    --bs-form-control-focus-border-color: var(--primary-color);
-    --bs-form-control-focus-box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1), 0 0 20px rgba(74, 144, 226, 0.3);
+    border-color: var(--primary-color);
+    box-shadow: none;
     border-color: var(--bs-form-control-focus-border-color);
     box-shadow: var(--bs-form-control-focus-box-shadow);
     transform: translateY(-2px);
@@ -1710,11 +1740,16 @@ html {
     background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
 }
 
-/* Accessibility Improvements */
+/* Remove Focus Outline */
 .btn:focus,
-.form-control:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+.form-control:focus,
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* Dark/Light Theme Variables */
@@ -2013,6 +2048,12 @@ body {
     margin-bottom: 1rem;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .development-icon {
@@ -2025,6 +2066,14 @@ body {
 
 .mobile-icon {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.service-icon i {
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon i {
+    transform: scale(1.2);
 }
 
 .service-number {
@@ -2041,18 +2090,36 @@ body {
     justify-content: center;
     font-weight: 700;
     font-size: 1.1rem;
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-number {
+    transform: scale(1.2) rotate(360deg);
+    background: var(--primary-color);
+    color: white;
 }
 
 .service-title {
     color: var(--text-primary);
     margin-bottom: 1rem;
     font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-title {
+    color: var(--primary-color);
+    transform: translateX(5px);
 }
 
 .service-description {
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-description {
+    color: var(--text-primary);
 }
 
 .service-features {
@@ -2067,11 +2134,35 @@ body {
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
     font-size: 0.9rem;
+    transition: all 0.3s ease;
+    transform: translateX(0);
+}
+
+.service-card:hover .service-features li {
+    transform: translateX(10px);
+    color: var(--text-primary);
+}
+
+.service-card:hover .service-features li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.service-card:hover .service-features li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.service-card:hover .service-features li:nth-child(3) {
+    transition-delay: 0.3s;
 }
 
 .service-features i {
     color: var(--success-color);
     margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-features i {
+    transform: scale(1.2);
 }
 
 /* Enhanced Portfolio Section */
@@ -2113,9 +2204,11 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 40px var(--shadow-light);
     border: 2px solid transparent;
-    transition: all 0.4s ease;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     position: relative;
     background-clip: padding-box;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .portfolio-card::before {
@@ -2130,7 +2223,7 @@ body {
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: xor;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     z-index: -1;
 }
 
@@ -2144,8 +2237,8 @@ body {
 }
 
 .portfolio-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px var(--shadow-medium);
+    transform: translateY(-20px) scale(1.05) rotateY(5deg) rotateX(5deg);
+    box-shadow: 0 30px 80px var(--shadow-medium);
 }
 
 .portfolio-card:hover::before {
@@ -2157,17 +2250,18 @@ body {
     position: relative;
     overflow: hidden;
     height: 250px;
+    transform-style: preserve-3d;
 }
 
 .portfolio-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .portfolio-card:hover .portfolio-image img {
-    transform: scale(1.1);
+    transform: scale(1.2) rotate(3deg);
 }
 
 .portfolio-overlay {
@@ -2181,11 +2275,13 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: all 0.4s ease;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scale(0.8);
 }
 
 .portfolio-card:hover .portfolio-overlay {
     opacity: 1;
+    transform: scale(1);
 }
 
 .portfolio-overlay-content {
@@ -2360,101 +2456,6 @@ body {
     font-weight: 600;
 }
 
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 50px;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    min-width: 120px;
-    justify-content: flex-start;
-    position: relative;
-    overflow: hidden;
-}
-
-.social-link i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    background: var(--border-color);
-    border-radius: 50%;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.social-link span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex: 1;
-    transition: color 0.3s ease;
-}
-
-.social-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.social-link:hover span {
-    color: white;
-}
-
-.social-link.github:hover {
-    background: #333;
-    border-color: #333;
-}
-
-.social-link.github:hover i {
-    background: white;
-    color: #333;
-}
-
-.social-link.linkedin:hover {
-    background: #0077b5;
-    border-color: #0077b5;
-}
-
-.social-link.linkedin:hover i {
-    background: white;
-    color: #0077b5;
-}
-
-.social-link.whatsapp:hover {
-    background: #25d366;
-    border-color: #25d366;
-}
-
-.social-link.whatsapp:hover i {
-    background: white;
-    color: #25d366;
-}
-
-.social-link.instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    border-color: #e6683c;
-}
-
-.social-link.instagram:hover i {
-    background: white;
-    color: #e6683c;
-}
-
 /* Contact Form */
 .contact-form {
     background: var(--card-bg);
@@ -2490,7 +2491,8 @@ body {
     background: var(--bg-secondary);
     border-color: var(--primary-color);
     color: var(--text-primary);
-    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.1);
+    box-shadow: none;
+    outline: none;
 }
 
 .form-floating > label {
@@ -2538,16 +2540,17 @@ body {
     overflow: hidden;
     border-radius: 12px;
     background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
-    transition: all 0.3s ease;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform-style: preserve-3d;
 }
 
 .portfolio-placeholder:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-10px) scale(1.05) rotateY(8deg);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
 }
 
 .portfolio-placeholder::before {
@@ -2557,9 +2560,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
     transform: translateX(-100%);
-    transition: transform 0.6s;
+    transition: transform 0.8s ease;
 }
 
 .portfolio-placeholder:hover::before {
@@ -2585,13 +2588,384 @@ body {
 .portfolio-placeholder .placeholder-icon {
     font-size: 3.5rem;
     opacity: 0.9;
-    transition: all 0.3s ease;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     margin-bottom: 1rem;
+    transform-style: preserve-3d;
 }
 
 .portfolio-placeholder:hover .placeholder-icon {
-    transform: scale(1.1);
+    transform: scale(1.3) rotateZ(360deg);
     opacity: 1;
+}
+
+/* 🔮 GLASSMORPHISM & MODERN EFFECTS */
+.glass-card {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glass-shadow), var(--neon-glow);
+    border-color: rgba(74, 144, 226, 0.3);
+}
+
+/* 🌟 NEON & GLOW EFFECTS */
+.neon-border {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                linear-gradient(135deg, var(--primary-color), var(--secondary-color)) border-box;
+    border-radius: 15px;
+    position: relative;
+}
+
+.neon-border::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.neon-border:hover::after {
+    opacity: 0.1;
+}
+
+/* 🎨 MAGNETIC HOVER EFFECTS */
+.magnetic {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+.magnetic:hover {
+    transform: scale(1.05);
+}
+
+/* 🌊 FLUID SHAPES */
+.blob-shape {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: blob-morph 8s ease-in-out infinite;
+}
+
+@keyframes blob-morph {
+    0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    25% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    75% { border-radius: 40% 60% 60% 40% / 70% 50% 60% 30%; }
+}
+
+/* 🚀 MICRO-INTERACTIONS & ADVANCED HOVER STATES */
+.bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.slide-up {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-up.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* 🎭 BUTTON MORPHING EFFECTS */
+.morph-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.morph-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+.morph-btn:hover::before {
+    left: 100%;
+}
+
+.morph-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(74, 144, 226, 0.3);
+}
+
+/* 🔄 LOADING SHIMMER EFFECT */
+.shimmer {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.2) 50%, 
+        rgba(255,255,255,0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* 🎯 CURSOR FOLLOW EFFECT */
+.cursor-follow {
+    position: relative;
+    cursor: none;
+}
+
+.cursor-follow::after {
+    content: '';
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9999;
+    transition: transform 0.1s;
+}
+
+/* 🌓 DYNAMIC THEME TRANSITIONS */
+* {
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+    --glass-bg: rgba(0, 0, 0, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.theme-transition {
+    background: conic-gradient(from 0deg at 50% 50%, 
+        var(--primary-color) 0deg, 
+        var(--secondary-color) 120deg, 
+        var(--accent-color) 240deg, 
+        var(--primary-color) 360deg);
+    animation: rotate-gradient 10s linear infinite;
+}
+
+@keyframes rotate-gradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 🎨 COLOR MORPHING */
+.color-morph {
+    background: linear-gradient(
+        45deg,
+        hsl(200, 100%, 50%),
+        hsl(280, 100%, 50%),
+        hsl(200, 100%, 50%)
+    );
+    background-size: 300% 300%;
+    animation: color-morph 4s ease-in-out infinite;
+}
+
+@keyframes color-morph {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* 🎴 3D TILT GLARE EFFECT */
+.tilt-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.tilt-glare-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* 🎨 NEUMORPHISM DESIGN SYSTEM */
+.neomorph {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.2),
+        -8px -8px 16px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.neomorph:hover {
+    box-shadow: 
+        12px 12px 24px rgba(0, 0, 0, 0.25),
+        -12px -12px 24px rgba(255, 255, 255, 0.08);
+}
+
+.neomorph-inset {
+    box-shadow: 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.05);
+}
+
+/* 🌊 LIQUID BUTTON EFFECT */
+.liquid-btn {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.liquid-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.liquid-btn:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* 🔮 HOLOGRAPHIC EFFECT */
+.holographic {
+    position: relative;
+    background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
+    background-size: 400% 400%;
+    animation: holographic-shift 10s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes holographic-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* 📱 ADVANCED RESPONSIVE SYSTEM */
+.fluid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(1rem, 5vw, 3rem);
+}
+
+.fluid-text {
+    font-size: var(--fluid-base);
+    line-height: 1.6;
+}
+
+.fluid-heading {
+    font-size: var(--fluid-3xl);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+/* 🎯 CONTAINER QUERIES (Progressive Enhancement) */
+@container (min-width: 400px) {
+    .adaptive-card {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+/* 🌊 SCROLL SNAP */
+.scroll-snap-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.scroll-snap-item {
+    scroll-snap-align: start;
+    min-height: 100vh;
+}
+
+/* 🎭 3D TRANSFORM EFFECTS */
+.card-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+}
+
+.parallax-element {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* 🌟 ADVANCED ANIMATIONS */
+.stagger-animation > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: stagger-fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes stagger-fade-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .portfolio-placeholder .placeholder-text {
@@ -2612,4 +2986,148 @@ body {
         background: white !important;
         color: black !important;
     }
+}
+
+/* Particle Canvas Background */
+.particle-canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Hero Content Container */
+.hero-content-container {
+    position: relative;
+    z-index: 1;
+}
+
+/*  PORTFOLIO ENHANCED ANIMATIONS */
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: portfolioFadeIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.portfolio-item:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-item:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-item:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-item:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-item:nth-child(5) { animation-delay: 0.5s; }
+.portfolio-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes portfolioFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Portfolio Image 3D Popup Effect */
+.portfolio-card .portfolio-image {
+    perspective: 1500px;
+}
+
+.portfolio-placeholder {
+    will-change: transform;
+}
+
+/* Smooth overlay transitions */
+.portfolio-overlay-content {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.portfolio-card:hover .portfolio-overlay-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Portfolio links smooth animations */
+.portfolio-links {
+    display: flex;
+    gap: 15px;
+}
+
+.portfolio-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+}
+
+.portfolio-card:hover .portfolio-link {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.portfolio-card:hover .portfolio-link:nth-child(1) { transition-delay: 0.1s; }
+.portfolio-card:hover .portfolio-link:nth-child(2) { transition-delay: 0.2s; }
+.portfolio-card:hover .portfolio-link:nth-child(3) { transition-delay: 0.3s; }
+
+.portfolio-link:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.2) translateY(0) rotate(360deg);
+}
+
+/* Smooth card content transitions */
+.portfolio-content {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.portfolio-card:hover .portfolio-content {
+    transform: translateY(-5px);
+}
+
+/* Portfolio title smooth effect */
+.portfolio-title {
+    transition: all 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-title {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* Tech tags smooth animations */
+.tech-tag {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.tech-tag:hover {
+    transform: scale(1.15) translateY(-3px);
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+}
+
+
+/* Remove portfolio auto-fadein */
+.portfolio-item {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: none !important;
+}
+
+/* Keep only hover effects - remove auto animations */
+* {
+    animation-iteration-count: 1 !important;
+}
+
+*[class*="infinite"],
+*[style*="infinite"] {
+    animation: none !important;
 }

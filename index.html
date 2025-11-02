@@ -11,7 +11,6 @@
     <link rel="icon" type="image/svg+xml" href="favicon-16x16.svg" sizes="16x16">
     <link rel="icon" type="image/svg+xml" href="favicon-32x32.svg" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.svg" sizes="180x180">
-    <link rel="manifest" href="site.webmanifest">
     
     <!-- Meta Tags for SEO and Social Media -->
     <meta name="description" content="Arya Winata - Full Stack Developer, Student & Web Designer. Modern portfolio showcasing innovative web solutions and creative projects.">
@@ -91,11 +90,11 @@
     <!-- Hero/Jumbotron Section -->
     <section id="home" class="hero-section">
         <div class="hero-overlay"></div>
-        <div class="container">
+        <div class="container hero-content-container">
             <div class="row min-vh-100 align-items-center">
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mb-4 mb-lg-0">
-                    <div class="hero-image-container text-center">
-                        <div class="hero-profile-wrapper" id="profileWrapper">
+                    <div class="hero-image-container text-center slide-up">
+                        <div class="hero-profile-wrapper magnetic blob-shape" id="profileWrapper">
                             <img id="profileImage" src="gambar1.png" alt="Arya Winata Profile" class="hero-profile-img img-fluid">
                             <div class="hero-image-glow"></div>
                             <!-- Profile Hover Indicator -->
@@ -120,7 +119,7 @@
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 text-lg-start text-center hero-text">
-                    <div class="hero-content">
+                    <div class="hero-content stagger-animation">
                         <div class="hero-welcome-text mb-3">
                             <span class="welcome-badge">
                                 <i class="bi bi-code-slash me-2"></i>Welcome to my world
@@ -128,7 +127,7 @@
                         </div>
                         
                         <h1 class="display-2 fw-bold mb-4 hero-title">
-                            Hi, I'm <span class="hero-name" id="changingName">Arya Winata</span>
+                            Hi, I'm <span class="hero-name holographic sparkle" id="changingName">Arya Winata</span>
                         </h1>
                         
                         <div class="hero-roles mb-4">
@@ -145,10 +144,10 @@
                             Mari berkolaborasi untuk mewujudkan ide-ide kreatif menjadi kenyataan digital yang menakjubkan! ✨
                         </p>
                         <div class="hero-actions d-flex gap-3 flex-wrap justify-content-lg-start justify-content-center mb-4">
-                            <a href="#portfolio" class="btn hero-btn-primary btn-lg px-4 py-3">
+                            <a href="#portfolio" class="btn morph-btn liquid-btn magnetic btn-lg px-4 py-3">
                                 <i class="bi bi-rocket-takeoff me-2"></i>Lihat Karya Saya
                             </a>
-                            <a href="#contact" class="btn hero-btn-secondary btn-lg px-4 py-3">
+                            <a href="#contact" class="btn hero-btn-secondary neomorph magnetic btn-lg px-4 py-3">
                                 <i class="bi bi-chat-dots me-2"></i>Mari Ngobrol
                             </a>
                         </div>
@@ -269,25 +268,25 @@
             <!-- Stats Row -->
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card">
+                    <div class="stat-card neomorph card-3d magnetic">
                         <h3 class="stat-number" data-count="2">0</h3>
                         <p class="stat-label">Years Learning</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card">
+                    <div class="stat-card neomorph card-3d magnetic">
                         <h3 class="stat-number" data-count="5">0</h3>
                         <p class="stat-label">Projects Done</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card">
+                    <div class="stat-card glass-card magnetic">
                         <h3 class="stat-number" data-count="10">0</h3>
                         <p class="stat-label">Technologies</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-card">
+                    <div class="stat-card neomorph card-3d magnetic">
                         <h3 class="stat-number" data-count="100">0</h3>
                         <p class="stat-label">% Dedication</p>
                     </div>
@@ -309,7 +308,7 @@
             
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
+                    <div class="service-card glass-card card-3d">
                         <div class="service-card-inner">
                             <div class="service-icon-wrapper">
                                 <div class="service-icon development-icon">
@@ -331,7 +330,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card featured">
+                    <div class="service-card glass-card card-3d featured">
                         <div class="service-card-inner">
                             <div class="service-icon-wrapper">
                                 <div class="service-icon design-icon">
@@ -353,7 +352,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
+                    <div class="service-card glass-card card-3d">
                         <div class="service-card-inner">
                             <div class="service-icon-wrapper">
                                 <div class="service-icon mobile-icon">
@@ -696,28 +695,6 @@
                                     <p>Semarang, Indonesia</p>
                                     <span class="contact-status">Open for remote work</span>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="social-connect mt-4">
-                            <h6 class="social-title">Connect with me</h6>
-                            <div class="social-links">
-                                <a href="https://github.com/arya2876" class="social-link github" title="GitHub">
-                                    <i class="bi bi-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                                <a href="#" class="social-link linkedin" title="LinkedIn">
-                                    <i class="bi bi-linkedin"></i>
-                                    <span>LinkedIn</span>
-                                </a>
-                                <a href="#" class="social-link whatsapp" title="WhatsApp">
-                                    <i class="bi bi-whatsapp"></i>
-                                    <span>WhatsApp</span>
-                                </a>
-                                <a href="#" class="social-link instagram" title="Instagram">
-                                    <i class="bi bi-instagram"></i>
-                                    <span>Instagram</span>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -1305,6 +1282,129 @@
                 changeLogoStyle();
             }
         }, 10000);
+
+        // 🌟 ADVANCED INTERACTIVE FEATURES
+        
+        // Intersection Observer for scroll animations
+        const advancedObserverOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const advancedObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Add stagger animation to children
+                    if (entry.target.classList.contains('stagger-animation')) {
+                        const children = entry.target.children;
+                        Array.from(children).forEach((child, index) => {
+                            setTimeout(() => {
+                                child.classList.add('animate-in');
+                            }, index * 100);
+                        });
+                    }
+                }
+            });
+        }, advancedObserverOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section, .slide-up').forEach(el => {
+            advancedObserver.observe(el);
+        });
+
+        // 🎭 Magnetic cursor effect for interactive elements
+        const magneticElements = document.querySelectorAll('.magnetic');
+        
+        magneticElements.forEach(element => {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.05)`;
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = '';
+            });
+        });
+
+        // 🌊 Parallax scroll effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+            
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // 🎨 Dynamic gradient mesh background
+        function createGradientMesh() {
+            const meshBg = document.createElement('div');
+            meshBg.className = 'gradient-mesh-bg';
+            meshBg.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--gradient-mesh);
+                opacity: 0.1;
+                z-index: -1;
+                animation: rotate-gradient 20s linear infinite;
+                pointer-events: none;
+            `;
+            document.body.appendChild(meshBg);
+        }
+
+        // 🚀 Enhanced page load animations
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.bounce-in').forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.animation = `bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)`;
+                }, index * 200);
+            });
+            
+            // Initialize gradient mesh
+            createGradientMesh();
+        });
+
+        // 🎯 Enhanced button interactions
+        document.querySelectorAll('.morph-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    background: rgba(255,255,255,0.6);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    left: ${e.offsetX - 5}px;
+                    top: ${e.offsetY - 5}px;
+                `;
+                
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
