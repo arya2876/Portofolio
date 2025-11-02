@@ -231,27 +231,76 @@ body {
     animation: fadeInUp 1s ease-out 1s both;
 }
 
+.hero-social-links .social-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    overflow: hidden !important;
+}
+
 .social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
     background: var(--card-bg);
     color: var(--text-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 50%;
-    text-decoration: none;
+    border-radius: 50% !important;
+    text-decoration: none !important;
     transition: all 0.3s ease;
     font-size: 1.1rem;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
 }
 
 .social-link:hover {
-    background: var(--primary-color);
-    color: white;
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
-    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Home Social Links - Platform Specific Colors */
+.hero-social-links .social-link[title="GitHub"]:hover {
+    background: #333;
+    color: white;
+    border-color: #333;
+    box-shadow: 0 10px 25px rgba(51, 51, 51, 0.3);
+}
+
+.hero-social-links .social-link[title="LinkedIn"]:hover {
+    background: #0077b5;
+    color: white;
+    border-color: #0077b5;
+    box-shadow: 0 10px 25px rgba(0, 119, 181, 0.3);
+}
+
+.hero-social-links .social-link[title="Instagram"]:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    border-color: #e6683c;
+    box-shadow: 0 10px 25px rgba(230, 104, 60, 0.3);
+}
+
+.hero-social-links .social-link[title="Email"]:hover {
+    background: #ea4335;
+    color: white;
+    border-color: #ea4335;
+    box-shadow: 0 10px 25px rgba(234, 67, 53, 0.3);
 }
 
 /* Hero Stats Theme */
@@ -1233,6 +1282,31 @@ footer .btn {
 footer .btn:hover {
     transform: translateY(-3px) scale(1.1);
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Social Buttons - Platform Specific Colors */
+footer .btn[title="GitHub"]:hover {
+    background: #333 !important;
+    border-color: #333 !important;
+    box-shadow: 0 10px 25px rgba(51, 51, 51, 0.3) !important;
+}
+
+footer .btn[title="LinkedIn"]:hover {
+    background: #0077b5 !important;
+    border-color: #0077b5 !important;
+    box-shadow: 0 10px 25px rgba(0, 119, 181, 0.3) !important;
+}
+
+footer .btn[title="Instagram"]:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+    border-color: #e6683c !important;
+    box-shadow: 0 10px 25px rgba(230, 104, 60, 0.3) !important;
+}
+
+footer .btn[title="Twitter"]:hover {
+    background: #1da1f2 !important;
+    border-color: #1da1f2 !important;
+    box-shadow: 0 10px 25px rgba(29, 161, 242, 0.3) !important;
 }
 
 /* Animations dari design asli */
