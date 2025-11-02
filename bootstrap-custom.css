@@ -1,5 +1,6 @@
-/* Bootstrap Custom CSS Integration */
-/* Menggabungkan styling Bootstrap dengan design yang sudah ada */
+/* Bootstrap 5 Custom CSS Integration */
+/* Pure Bootstrap 5 compatible styling - NO Tailwind CSS */
+/* All classes and utilities follow Bootstrap 5 conventions */
 
 :root {
     --primary-color: #4a90e2;
@@ -11,14 +12,14 @@
     --light-color: #f8f9fa;
 }
 
-/* Global Styles */
+/* Global Styles - Bootstrap Compatible */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: var(--bs-body-font-family, 'Arial', sans-serif);
+    line-height: var(--bs-body-line-height, 1.6);
     scroll-behavior: smooth;
 }
 
-/* Custom Icon Sizes untuk menghindari inline styles */
+/* Bootstrap Custom Icon Utilities */
 .icon-sm {
     width: 50px !important;
     height: 50px !important;
@@ -32,6 +33,14 @@ body {
 .icon-lg {
     width: 80px !important;
     height: 80px !important;
+}
+
+/* Bootstrap Compatible Utility Classes */
+.text-gradient {
+    background: linear-gradient(45deg, var(--bs-primary, var(--primary-color)), var(--bs-success, var(--success-color)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Hero Section dengan background GIF */
@@ -164,16 +173,19 @@ body {
     }
 }
 
-/* Card Enhancements */
+/* Bootstrap Card Enhancements */
 .card {
+    --bs-card-border-width: 0;
+    --bs-card-border-radius: var(--bs-border-radius-lg, 0.5rem);
     transition: all 0.3s ease;
-    border: none;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
     overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    --bs-card-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--bs-card-box-shadow) !important;
 }
 
 .portfolio-card {
@@ -188,55 +200,73 @@ body {
     transform: scale(1.05);
 }
 
-/* Button Enhancements dengan gradient dari design asli */
+/* Bootstrap Button Enhancements */
 .btn-primary {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    border: none;
-    font-weight: 600;
+    --bs-btn-bg: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    --bs-btn-border-color: transparent;
+    background: var(--bs-btn-bg);
+    border: var(--bs-btn-border-width, 1px) solid var(--bs-btn-border-color);
+    font-weight: var(--bs-btn-font-weight, 600);
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    --bs-btn-hover-bg: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    --bs-btn-hover-border-color: transparent;
+    background: var(--bs-btn-hover-bg);
+    border-color: var(--bs-btn-hover-border-color);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
 }
 
 .btn-warning {
-    background: linear-gradient(45deg, var(--warning-color), #ffcd3c);
-    border: none;
-    color: #333;
-    font-weight: 600;
+    --bs-btn-bg: linear-gradient(45deg, var(--warning-color), #ffcd3c);
+    --bs-btn-color: var(--bs-dark, #333);
+    --bs-btn-border-color: transparent;
+    background: var(--bs-btn-bg);
+    color: var(--bs-btn-color);
+    border: var(--bs-btn-border-width, 1px) solid var(--bs-btn-border-color);
+    font-weight: var(--bs-btn-font-weight, 600);
 }
 
 .btn-warning:hover {
-    background: linear-gradient(45deg, #ffcd3c, var(--warning-color));
-    color: #333;
+    --bs-btn-hover-bg: linear-gradient(45deg, #ffcd3c, var(--warning-color));
+    --bs-btn-hover-color: var(--bs-dark, #333);
+    background: var(--bs-btn-hover-bg);
+    color: var(--bs-btn-hover-color);
     transform: translateY(-2px);
 }
 
-/* Section Styling */
+/* Bootstrap Section Enhancements */
 section {
-    padding: 80px 0;
+    padding: var(--bs-section-padding-y, 80px) 0;
 }
 
 .bg-light {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    --bs-bg-opacity: 1;
+    background: linear-gradient(135deg, 
+        rgba(var(--bs-light-rgb, 248, 249, 250), var(--bs-bg-opacity)) 0%, 
+        rgba(var(--bs-gray-200-rgb, 233, 236, 239), var(--bs-bg-opacity)) 100%) !important;
 }
 
-/* Form Enhancements dari design asli */
+/* Bootstrap Form Enhancements */
 .form-control {
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    padding: 12px 15px;
-    font-size: 16px;
+    --bs-border-width: 2px;
+    --bs-border-color: var(--bs-border-color, #ddd);
+    --bs-border-radius: var(--bs-border-radius, 8px);
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    padding: var(--bs-form-control-padding-y, 12px) var(--bs-form-control-padding-x, 15px);
+    font-size: var(--bs-body-font-size, 16px);
     transition: all 0.3s ease;
-    background: white;
+    background: var(--bs-form-control-bg, white);
 }
 
 .form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    --bs-form-control-focus-border-color: var(--primary-color);
+    --bs-form-control-focus-box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    border-color: var(--bs-form-control-focus-border-color);
+    box-shadow: var(--bs-form-control-focus-box-shadow);
     transform: translateY(-2px);
 }
 
@@ -516,21 +546,50 @@ footer a:hover {
     }
 }
 
-/* Custom Utilities */
-.text-gradient {
-    background: linear-gradient(45deg, var(--primary-color), var(--success-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
+/* Bootstrap Custom Utilities */
 .shadow-custom {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --bs-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--bs-box-shadow);
 }
 
 .border-gradient {
-    border: 2px solid;
+    --bs-border-width: 2px;
+    border: var(--bs-border-width) solid;
     border-image: linear-gradient(45deg, var(--primary-color), var(--success-color)) 1;
+}
+
+/* Bootstrap Extension Classes */
+.rounded-custom {
+    border-radius: var(--bs-border-radius-xxl, 2rem) !important;
+}
+
+.fw-extra-bold {
+    font-weight: 800 !important;
+}
+
+/* Bootstrap Compatible Spacing Utilities */
+.p-custom {
+    padding: 2.5rem !important;
+}
+
+.m-custom {
+    margin: 2.5rem !important;
+}
+
+/* Bootstrap Compatible Display Utilities */
+.d-custom-flex {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Bootstrap Compatible Color Utilities */
+.text-custom-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-custom-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--success-color)) !important;
 }
 
 /* Smooth Scroll Enhancement */
