@@ -58,26 +58,85 @@
             <div class="row min-vh-100 align-items-center">
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mb-4 mb-lg-0">
                     <div class="hero-image-container text-center">
-                        <div class="hero-profile-wrapper">
-                            <img src="gambar1.png" alt="Arya Winata Profile" class="hero-profile-img img-fluid">
+                        <div class="hero-profile-wrapper" id="profileWrapper">
+                            <img id="profileImage" src="gambar1.png" alt="Arya Winata Profile" class="hero-profile-img img-fluid">
                             <div class="hero-image-glow"></div>
+                            <!-- Profile Hover Indicator -->
+                            <div class="profile-hover-indicator">
+                                <i class="bi bi-magic"></i>
+                                <span>Hover me!</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Status indicator with toggle -->
+                        <div class="hero-status mt-4">
+                            <div class="status-toggle-container">
+                                <span id="statusBadge" class="badge bg-success fs-6 px-3 py-2 status-clickable">
+                                    <i class="bi bi-circle-fill me-2 status-dot"></i>
+                                    <span id="statusText">Available for projects</span>
+                                </span>
+                                <div class="status-toggle-hint">
+                                    <small class="text-muted">Click to toggle availability</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 text-white text-lg-start text-center">
-                    <h1 class="display-2 fw-bold mb-4">
-                        Hello, I'm <span class="text-warning" id="changingName">Arya Winata</span>
-                    </h1>
-                    <p class="lead mb-5 fs-4">
-                        Full Stack Developer | Student | Web Designer
-                    </p>
-                    <div class="d-flex gap-3 flex-wrap justify-content-lg-start justify-content-center">
-                        <a href="#portfolio" class="btn btn-warning btn-lg px-4 py-3">
-                            <i class="bi bi-eye me-2"></i>View My Work
-                        </a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3">
-                            <i class="bi bi-envelope me-2"></i>Contact Me
-                        </a>
+                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 text-lg-start text-center hero-text">
+                    <div class="hero-content">
+                        <h1 class="display-2 fw-bold mb-4 hero-title">
+                            Hello, I'm <span class="hero-name" id="changingName">Arya Winata</span>
+                        </h1>
+                        <p class="lead mb-4 fs-4 hero-subtitle">
+                            Full Stack Developer | Student | Web Designer
+                        </p>
+                        <p class="hero-description mb-5">
+                            Passionate about creating innovative web solutions and bringing ideas to life through clean, efficient code.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap justify-content-lg-start justify-content-center mb-4">
+                            <a href="#portfolio" class="btn hero-btn-primary btn-lg px-4 py-3">
+                                <i class="bi bi-eye me-2"></i>View My Work
+                            </a>
+                            <a href="#contact" class="btn hero-btn-secondary btn-lg px-4 py-3">
+                                <i class="bi bi-envelope me-2"></i>Contact Me
+                            </a>
+                        </div>
+                        <!-- Quick Stats -->
+                        <div class="hero-stats mb-4">
+                            <div class="row text-center text-lg-start">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number hero-stat-number fw-bold fs-3" data-count="15">0</div>
+                                        <div class="stat-label hero-stat-label small">Projects</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number hero-stat-number fw-bold fs-3" data-count="3">0</div>
+                                        <div class="stat-label hero-stat-label small">Years Experience</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number hero-stat-number fw-bold fs-3" data-count="50">0</div>
+                                        <div class="stat-label hero-stat-label small">Happy Clients</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="hero-social-links d-flex gap-3 justify-content-lg-start justify-content-center">
+                            <a href="https://github.com/arya2876" class="hero-social-link fs-4" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="#" class="hero-social-link fs-4" title="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="hero-social-link fs-4" title="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -282,6 +341,7 @@
                         <button class="filter-btn active" data-filter="all">All Projects</button>
                         <button class="filter-btn" data-filter="web">Web Development</button>
                         <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                        <button class="filter-btn" data-filter="mobile">Mobile App</button>
                         <button class="filter-btn" data-filter="responsive">Responsive</button>
                     </div>
                 </div>
@@ -291,19 +351,24 @@
                 <div class="col-lg-4 col-md-6 portfolio-item" data-category="web responsive">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="https://via.placeholder.com/400x280/4a90e2/ffffff?text=Student+Registration" alt="Student Registration System">
+                            <div class="portfolio-placeholder web">
+                                <div class="text-center text-white">
+                                    <i class="bi bi-laptop placeholder-icon"></i>
+                                    <h5 class="placeholder-text">Student Registration</h5>
+                                </div>
+                            </div>
                             <div class="portfolio-overlay">
                                 <div class="portfolio-overlay-content">
                                     <h5>Student Registration System</h5>
                                     <p>Web Application</p>
                                     <div class="portfolio-links">
-                                        <a href="#" class="portfolio-link" title="View Details">
+                                        <a href="index.html" class="portfolio-link" title="View Details">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a href="#" class="portfolio-link" title="View Code">
+                                        <a href="https://github.com/arya2876/Portofolio" class="portfolio-link" title="View Code">
                                             <i class="bi bi-github"></i>
                                         </a>
-                                        <a href="#" class="portfolio-link" title="Live Demo">
+                                        <a href="index.html" class="portfolio-link" title="Live Demo">
                                             <i class="bi bi-box-arrow-up-right"></i>
                                         </a>
                                     </div>
@@ -326,7 +391,12 @@
                 <div class="col-lg-4 col-md-6 portfolio-item" data-category="design responsive">
                     <div class="portfolio-card featured">
                         <div class="portfolio-image">
-                            <img src="https://via.placeholder.com/400x280/357abd/ffffff?text=Personal+Portfolio" alt="Personal Portfolio">
+                            <div class="portfolio-placeholder design">
+                                <div class="text-center text-white">
+                                    <i class="bi bi-palette placeholder-icon"></i>
+                                    <h5 class="placeholder-text">Personal Portfolio</h5>
+                                </div>
+                            </div>
                             <div class="portfolio-overlay">
                                 <div class="portfolio-overlay-content">
                                     <h5>Personal Portfolio</h5>
@@ -358,26 +428,157 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web">
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web responsive">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="https://via.placeholder.com/400x280/ff6b6b/ffffff?text=Coming+Soon" alt="Upcoming Project">
+                            <div class="portfolio-placeholder web">
+                                <div class="text-center text-white">
+                                    <i class="bi bi-bootstrap placeholder-icon"></i>
+                                    <h5 class="placeholder-text">Bootstrap Landing</h5>
+                                </div>
+                            </div>
                             <div class="portfolio-overlay">
                                 <div class="portfolio-overlay-content">
-                                    <h5>Exciting Project</h5>
-                                    <p>In Development</p>
+                                    <h5>Bootstrap Landing Page</h5>
+                                    <p>Modern Web Design</p>
                                     <div class="portfolio-links">
-                                        <a href="#" class="portfolio-link disabled" title="Coming Soon">
-                                            <i class="bi bi-clock"></i>
+                                        <a href="landing.html" class="portfolio-link" title="View Details">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="https://github.com/arya2876/Portofolio" class="portfolio-link" title="View Code">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                        <a href="landing.html" class="portfolio-link" title="Live Demo">
+                                            <i class="bi bi-box-arrow-up-right"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <div class="portfolio-category">Coming Soon</div>
-                            <h5 class="portfolio-title">Next Big Project</h5>
-                            <p class="portfolio-description">Exciting new project in development. Stay tuned for updates and announcements.</p>
+                            <div class="portfolio-category">Web Development</div>
+                            <h5 class="portfolio-title">Bootstrap Landing Page</h5>
+                            <p class="portfolio-description">Modern responsive landing page with dark/light theme, animations, and interactive components.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Bootstrap 5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile responsive">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="portfolio-placeholder mobile">
+                                <div class="text-center text-white">
+                                    <i class="bi bi-phone placeholder-icon"></i>
+                                    <h5 class="placeholder-text">Mobile App UI</h5>
+                                </div>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h5>Mobile App Design</h5>
+                                    <p>UI/UX Design</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link" title="View Details">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="https://github.com/arya2876/Portofolio" class="portfolio-link" title="View Code">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                        <a href="#" class="portfolio-link" title="Live Demo">
+                                            <i class="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">Mobile Design</div>
+                            <h5 class="portfolio-title">Mobile App Interface</h5>
+                            <p class="portfolio-description">Clean and modern mobile application interface with intuitive user experience design.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">UI/UX</span>
+                                <span class="tech-tag">Mobile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="design">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="portfolio-placeholder branding">
+                                <div class="text-center text-white">
+                                    <i class="bi bi-brush placeholder-icon"></i>
+                                    <h5 class="placeholder-text">Brand Identity</h5>
+                                </div>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h5>Brand Identity Design</h5>
+                                    <p>Visual Branding</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link" title="View Details">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="https://github.com/arya2876/Portofolio" class="portfolio-link" title="View Code">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                        <a href="#" class="portfolio-link" title="Live Demo">
+                                            <i class="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">Brand Design</div>
+                            <h5 class="portfolio-title">Corporate Branding</h5>
+                            <p class="portfolio-description">Complete brand identity package including logo, colors, typography, and brand guidelines.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Illustrator</span>
+                                <span class="tech-tag">Photoshop</span>
+                                <span class="tech-tag">Branding</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web responsive">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="portfolio-placeholder web">
+                                <div class="text-center text-white">
+                                    <i class="bi bi-code-slash placeholder-icon"></i>
+                                    <h5 class="placeholder-text">E-Commerce</h5>
+                                </div>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h5>E-Commerce Platform</h5>
+                                    <p>Full-Stack Development</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link" title="View Details">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="https://github.com/arya2876/Portofolio" class="portfolio-link" title="View Code">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                        <a href="#" class="portfolio-link" title="Live Demo">
+                                            <i class="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">Web Development</div>
+                            <h5 class="portfolio-title">Online Store Platform</h5>
+                            <p class="portfolio-description">Full-featured e-commerce website with shopping cart, payment integration, and admin panel.</p>
                             <div class="portfolio-tech">
                                 <span class="tech-tag">React</span>
                                 <span class="tech-tag">Node.js</span>
@@ -837,6 +1038,170 @@
                 contactForm.reset();
             }, 2000);
         });
+        
+        // Profile Image Auto-Switching on Hover
+        const profileImages = {
+            professional: 'gambar1.png',
+            cartoon: 'Versi kartun.png' 
+        };
+        
+        let currentProfileType = 'professional';
+        let isProfileSwitching = false;
+        
+        function switchToImage(type) {
+            if (isProfileSwitching || currentProfileType === type) return;
+            
+            isProfileSwitching = true;
+            const profileImg = document.getElementById('profileImage');
+            
+            // Add switching animation
+            profileImg.classList.add('profile-switching');
+            
+            setTimeout(() => {
+                // Change image source
+                profileImg.src = profileImages[type];
+                currentProfileType = type;
+                
+                // Remove switching animation and add switched animation
+                profileImg.classList.remove('profile-switching');
+                profileImg.classList.add('profile-switched');
+                
+                setTimeout(() => {
+                    profileImg.classList.remove('profile-switched');
+                    isProfileSwitching = false;
+                }, 300);
+                
+            }, 250);
+        }
+        
+        // Profile hover events
+        const profileWrapper = document.getElementById('profileWrapper');
+        
+        profileWrapper.addEventListener('mouseenter', function() {
+            switchToImage('cartoon');
+        });
+        
+        profileWrapper.addEventListener('mouseleave', function() {
+            switchToImage('professional');
+        });
+        
+        // Status Toggle Functionality
+        let isAvailable = true;
+        
+        function toggleAvailabilityStatus() {
+            const statusBadge = document.getElementById('statusBadge');
+            const statusText = document.getElementById('statusText');
+            
+            isAvailable = !isAvailable;
+            
+            if (isAvailable) {
+                statusBadge.className = 'badge bg-success fs-6 px-3 py-2 status-clickable';
+                statusText.textContent = 'Available for projects';
+                statusBadge.innerHTML = '<i class="bi bi-circle-fill me-2 status-dot"></i><span id="statusText">Available for projects</span>';
+            } else {
+                statusBadge.className = 'badge bg-danger fs-6 px-3 py-2 status-clickable unavailable';
+                statusText.textContent = 'Currently busy';
+                statusBadge.innerHTML = '<i class="bi bi-x-circle-fill me-2 status-dot"></i><span id="statusText">Currently busy</span>';
+            }
+        }
+        
+        // Status click event
+        document.getElementById('statusBadge').addEventListener('click', toggleAvailabilityStatus);
+        
+        // Enhanced Sticky Navbar Functionality
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+        
+        function handleNavbarScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add scrolled class when scrolling down
+            if (scrollTop > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Hide/show navbar based on scroll direction (optional enhancement)
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                // Scrolling down & past 200px
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }
+        
+        // Throttled scroll event for better performance
+        let ticking = false;
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(handleNavbarScroll);
+                ticking = true;
+                setTimeout(() => {
+                    ticking = false;
+                }, 10);
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+        
+        // Add body padding to compensate for fixed navbar
+        document.body.style.paddingTop = navbar.offsetHeight + 'px';
+        
+        // Active Navigation Link Based on Scroll Position
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            let currentSection = '';
+            const scrollPos = window.scrollY + navbar.offsetHeight + 100; // Offset for navbar height
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            // Update active class on nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Enhanced scroll handler that includes active nav detection
+        function enhancedScrollHandler() {
+            handleNavbarScroll();
+            updateActiveNavLink();
+        }
+        
+        // Replace the simple scroll listener with enhanced version
+        window.removeEventListener('scroll', requestTick);
+        
+        let enhancedTicking = false;
+        function requestEnhancedTick() {
+            if (!enhancedTicking) {
+                requestAnimationFrame(enhancedScrollHandler);
+                enhancedTicking = true;
+                setTimeout(() => {
+                    enhancedTicking = false;
+                }, 10);
+            }
+        }
+        
+        window.addEventListener('scroll', requestEnhancedTick);
+        
+        // Initialize active nav on page load
+        setTimeout(updateActiveNavLink, 100);
     </script>
 </body>
 </html>
